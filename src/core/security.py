@@ -3,7 +3,6 @@ from typing import Any
 
 import bcrypt
 import jwt
-from jwt import InvalidTokenError
 
 from src.core.config import settings
 
