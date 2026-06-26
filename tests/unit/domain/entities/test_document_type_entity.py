@@ -50,3 +50,16 @@ def test_updated_at_is_timezone_aware(entity: DocumentTypeEntity) -> None:
 def test_str_contains_code_and_name(entity: DocumentTypeEntity) -> None:
     assert entity.code in str(entity)
     assert entity.name in str(entity)
+
+
+def test_format_pattern_defaults_to_none(entity: DocumentTypeEntity) -> None:
+    assert entity.format_pattern is None
+
+
+def test_format_pattern_can_be_set() -> None:
+    format_pattern = r"^\d{8}$"
+
+    entity = DocumentTypeEntity(
+        code="DNI", name="National ID", format_pattern=format_pattern
+    )
+    assert entity.format_pattern == format_pattern
