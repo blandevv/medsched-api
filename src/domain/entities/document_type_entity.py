@@ -7,6 +7,7 @@ from src.domain.entities.base_audit_entity import BaseAuditEntity
 class DocumentTypeEntity(BaseAuditEntity):
     code: str
     name: str
+    format_pattern: str | None = None
     is_active: bool = True
 
     def __str__(self) -> str:
