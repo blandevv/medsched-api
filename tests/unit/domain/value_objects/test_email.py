@@ -122,4 +122,3 @@ def test_invalid_format_is_caught_as_domain_error() -> None:
 
 def test_str_returns_value(entity: Email) -> None:
     assert str(entity) == "juan.perez@example.com"
-
