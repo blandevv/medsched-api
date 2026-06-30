@@ -86,9 +86,7 @@ def test_is_active_defaults_to_true(entity: UserEntity) -> None:
     assert entity.is_active is True
 
 
-def test_is_active_can_be_set_to_false(
-    role: RoleEntity, document: Document
-) -> None:
+def test_is_active_can_be_set_to_false(role: RoleEntity, document: Document) -> None:
     user = UserEntity(
         document=document,
         gender=Gender.MALE,
@@ -107,9 +105,7 @@ def test_fullname_with_required_names_only(entity: UserEntity) -> None:
     assert entity.fullname == "John Doe"
 
 
-def test_fullname_includes_middle_name(
-    role: RoleEntity, document: Document
-) -> None:
+def test_fullname_includes_middle_name(role: RoleEntity, document: Document) -> None:
     user = UserEntity(
         document=document,
         gender=Gender.MALE,
@@ -141,9 +137,7 @@ def test_fullname_includes_second_last_name(
     assert user.fullname == "John Doe Smith"
 
 
-def test_fullname_includes_all_names(
-    role: RoleEntity, document: Document
-) -> None:
+def test_fullname_includes_all_names(role: RoleEntity, document: Document) -> None:
     user = UserEntity(
         document=document,
         gender=Gender.MALE,
