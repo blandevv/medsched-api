@@ -7,6 +7,7 @@ from src.domain.entities.base_audit_entity import BaseAuditEntity
 class SpecialtyEntity(BaseAuditEntity):
     code: str
     name: str
+    default_duration_minutes: int
     description: str | None = None
     is_active: bool = True
 
@@ -16,6 +17,7 @@ class SpecialtyEntity(BaseAuditEntity):
             f"id={self.id}, "
             f"code={self.code}, "
             f"name={self.name}, "
+            f"default_duration_minutes={self.default_duration_minutes}, "
             f"description={self.description}, "
             f"is_active={self.is_active})"
         )

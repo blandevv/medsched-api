@@ -7,7 +7,9 @@ from src.domain.entities.specialty_entity import SpecialtyEntity
 
 @pytest.fixture
 def entity() -> SpecialtyEntity:
-    return SpecialtyEntity(code="CARD", name="Cardiology", is_active=True)
+    return SpecialtyEntity(
+        code="CARD", name="Cardiology", default_duration_minutes=30, is_active=True
+    )
 
 
 def test_code_is_stored(entity: SpecialtyEntity) -> None:
@@ -27,7 +29,9 @@ def test_is_active_defaults_to_true(entity: SpecialtyEntity) -> None:
 
 
 def test_is_active_can_be_set_to_false() -> None:
-    entity = SpecialtyEntity(code="CARD", name="Cardiology", is_active=False)
+    entity = SpecialtyEntity(
+        code="CARD", name="Cardiology", default_duration_minutes=30, is_active=False
+    )
     assert entity.is_active is False
 
 
